@@ -1,7 +1,24 @@
-# Vue 3 + Vite
+# Vue 3 + Vite Boilerplate for Laravel Sanctum cookie based authentication
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This repository serves as a starting point for building Vue.js applications with Laravel Sanctum cookie-based authentication. 
+It includes pre-configured setups for vue-router, vuex store, and Tailwind CSS to streamline the development process.
 
-## Recommended IDE Setup
+## Pre-requisites
+- Require a Laravel application setup with breeze api only authhentication with database. if not avialable then follow steps given on [official Laravel Documentation](https://laravel.com/docs/). 
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Instalation
+
+Clone the repo
+```bash
+git clone https://github.com/suhaskunte777/vue-client-sanctum-spa-auth.git
+```
+
+Go to cloned directory and install depencies and run application
+```bash
+npm install && npm run dev
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
