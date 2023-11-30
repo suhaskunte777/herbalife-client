@@ -14,6 +14,16 @@ const routes = [
                 name: 'Dashboard',
                 component: () => import('../views/Dashboard.vue')
             },
+            {
+                path: '/profile',
+                name: 'Profile',
+                component: () => import('../views/auth/Profile.vue')
+            },
+            {
+                path: '/settings',
+                name: 'Settings',
+                component: () => import('../views/auth/Settings.vue')
+            },
         ]
     },
     {
@@ -35,7 +45,7 @@ const routes = [
             },
             {
                 path: '/request-password',
-                name: 'RequestPassword',
+                name: 'RequestPasswordReset',
                 component: () => import('../views/Auth/RequestPasswordReset.vue'),
                 meta: {
                     requiresGuest: true
@@ -63,7 +73,10 @@ const router = createRouter({
     routes
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+    if(!store.state.initialized) {
+        await store.dispatch('initializeAuthState');
+    }
     if (to.meta.requiresAuth && !store.state.authenticated) {
         next({ name: 'Login' });
     } else if (store.state.authenticated && (to.meta.isGuest)) {

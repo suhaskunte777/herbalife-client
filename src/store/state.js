@@ -1,4 +1,6 @@
 export default {
     user: {},
-    authenticated: false
+    authenticated: false,
+    errors: {},
+    initialized: false
 }
