@@ -134,12 +134,12 @@ defineProps({
 const user = computed(() => store.state.user);
 
 const signOut = () => {
-    console.log('sign out');
     store.dispatch('logout');
 }
 
 const navigation = [
     { name: 'Dashboard', to: { name: 'Dashboard' }, current: true },
+    { name: 'Clients', to: { name: 'ClientsIndex' }, current: false },
 ]
 
 const userNavigation = [

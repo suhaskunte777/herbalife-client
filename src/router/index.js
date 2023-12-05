@@ -24,6 +24,31 @@ const routes = [
                 name: 'Settings',
                 component: () => import('../views/auth/Settings.vue')
             },
+            {
+                path: '/clients',
+                name: 'ClientsIndex',
+                component: () => import('../views/Clients/ClientIndex.vue')
+            },
+            {
+                path: '/clients/:id',
+                name: 'ClientsShow',
+                component: () => import('../views/Clients/ClientShow.vue')
+            },
+            {
+                path: '/clients/:id/edit',
+                name: 'ClientsEdit',
+                component: () => import('../views/Clients/ClientEdit.vue')
+            },
+            {
+                path: '/clients/create',
+                name: 'ClientsCreate',
+                component: () => import('../views/Clients/ClientCreate.vue')
+            },
+            {
+                path: '/clients/:id/measurements/create',
+                name: 'MeasurementsCreate',
+                component: () => import('../views/Measurements/CreateMeasurement.vue')
+            },
         ]
     },
     {

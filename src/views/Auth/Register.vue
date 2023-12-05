@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-</template>  
+</template>
 
 <script setup>
 import { ref } from 'vue';
@@ -82,7 +82,6 @@ const user = ref({
 });
 
 const onRegister = () => {
-    console.log(user.value);
     store.dispatch('register', user.value);
 }
 </script>
