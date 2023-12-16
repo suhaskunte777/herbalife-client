@@ -12,7 +12,7 @@ export async function getCurrentUser({ commit }, data) {
 }
 
 export async function initializeAuthState({ commit }) {
-    commit('setAuthenticated', localStorage.getItem("authenticated") === "true" ? true : false);
+    commit('setAuthenticated', localStorage.getItem("authenticated") === "true");
     commit('setInitialized', true);
 }
 
@@ -76,7 +76,7 @@ function removeXsrfCookie() {
 export async function getClients({ commit, state }, data) {
     try {
         if (!state.clients.length) {
-            const clients = await axiosClient.get('/api/clients', data)
+            const clients = await axiosClient.get('/api/clients?includes=id,first_name,middle_name,last_name,country_code,phone', data)
             commit('setClients', clients.data.data);
         }
     } catch (error) {
@@ -91,5 +91,16 @@ export async function createClientMeasurement({ commit }, data) {
         await axiosClient.post(`/api/clients/${clientId}/measurements`, data);
     } catch (error) {
         commit('setErrors', error.response.data.errors, { root: true });
+    }
+}
+
+export async function getClient({ commit, state }, data) {
+    try {
+        if (state.client?.id !== data) {
+            const client = await axiosClient.get(`/api/clients/${data}`)
+            commit('setCurrentClient', client.data.data);
+        }
+    } catch (error) {
+        console.error(error);
     }
 }

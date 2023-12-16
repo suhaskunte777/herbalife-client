@@ -275,7 +275,7 @@
 <script setup>
 import AuthHeader from '../../components/AuthHeader.vue';
 import InputError from '../../components/child/InputError.vue';
-import { ref, onMounted, computed, watch, onUpdated } from "vue";
+import { ref, onMounted, computed, watch, onUpdated, onBeforeMount } from "vue";
 import {
     Listbox,
     ListboxButton,
@@ -286,7 +286,9 @@ import {
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 import store from '../../store';
 import axios from 'axios';
+import { useRoute } from 'vue-router';
 
+const router = useRoute();
 
 
 const clientInputData = ref({
@@ -328,10 +330,21 @@ const form = ref({
 });
 
 watch(clientInputData.value, () => {
+    formProgress();
+});
+
+const formProgress = () => {
     let total = Object.keys(clientInputData.value).length;
     let completed = Object.values(clientInputData.value).filter(value => value !== '').length;
     let percentage = Math.round((completed / total) * 100);
     form.value.percentage = percentage;
+};
+
+onBeforeMount(async () => {
+    await store.dispatch("getClient", router.params.id);
+
+    clientInputData.value = store.state.currentClient;
+    formProgress();
 });
 
 const updateAddressFields = (clientInputData, event) => {

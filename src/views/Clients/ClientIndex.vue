@@ -24,18 +24,21 @@
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ client.id }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ client.fullName }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">
-                                        <a :href="'tel:' + client.countryCode + + client.phone">
-                                            <PhoneIcon class="h-5 w-5 mx-3 text-green-500 inline-block"></PhoneIcon>
+                                        <a :href="'tel:' + client.countryCode + + client.phone"
+                                            class="bg-blue-500 p-1 m-1 rounded-md text-white  inline-block">
+                                            <PhoneIcon class="h-5 w-5 mx-3 text-green-300 inline-block"></PhoneIcon>Call
                                         </a>
                                         <!-- add whatsapp action -->
-                                        <a :href="'https://wa.me/' + client.countryCode + client.phone" target="_blank">
-                                            <ChatBubbleOvalLeftIcon class="h-5 w-5 mx-3 text-green-500 inline-block">
-                                            </ChatBubbleOvalLeftIcon>
+                                        <a :href="'https://wa.me/' + client.countryCode + client.phone" target="_blank"
+                                            class="bg-green-500 p-1 m-1 rounded-md text-white  inline-block">
+                                            <ChatBubbleOvalLeftIcon class="h-5 w-5 mx-3 text-green-900 inline-block">
+                                            </ChatBubbleOvalLeftIcon> WhatsApp
                                         </a>
                                         <!-- Message  -->
-                                        <a :href="'sms:' + client.countryCode + + client.phone">
-                                            <ChatBubbleLeftRightIcon class="h-5 w-5 mx-3 text-green-500 inline-block">
-                                            </ChatBubbleLeftRightIcon>
+                                        <a :href="'sms:' + client.countryCode + + client.phone"
+                                            class="bg-blue-600 p-1 m-1 rounded-md text-white  inline-block">
+                                            <ChatBubbleLeftRightIcon class="h-5 w-5 mx-3 text-green-300 inline-block">
+                                            </ChatBubbleLeftRightIcon> Message
                                         </a>
                                     </td>
                                     <td class="whitespace-nowrap px-6 py-4">
@@ -44,7 +47,8 @@
                                         <router-link :to="{ name: 'ClientsEdit', params: { id: client.id } }"
                                             class="bg-yellow-500 p-2 m-2 rounded-md text-white">Edit</router-link>
                                         <router-link :to="{ name: 'MeasurementsCreate', params: { id: client.id } }"
-                                            class="bg-indigo-500 p-2 m-2 rounded-md text-white">Add Measurement</router-link>
+                                            class="bg-indigo-500 p-2 m-2 rounded-md text-white">Add
+                                            Measurement</router-link>
                                     </td>
                                 </tr>
                             </tbody>

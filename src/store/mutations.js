@@ -25,3 +25,8 @@ export function setInitialized(state, value) {
 export function setClients(state, value) {
     state.clients = value
 }
+
+export function setCurrentClient(state, value) {
+    value['gender'] = state.genders.find(gender => gender.name === value.gender.replace(/^./, value.gender[0].toUpperCase()));
+    state.currentClient = value;
+}
