@@ -1,0 +1,1 @@
+import{_ as a}from"./AuthHeader-UjLprxd0.js";import{a as t,c as e,w as o,b as r}from"./index-0XO5Nko-.js";const p={__name:"Dashboard",setup(s){return(_,c)=>(t(),e(a,{title:"Dashboard"},{default:o(()=>[r(" Dashbaord Context ")]),_:1}))}};export{p as default};

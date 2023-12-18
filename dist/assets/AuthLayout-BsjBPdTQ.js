@@ -1,0 +1,1 @@
+import{o as a,s as t,r as o,a as r,c as s}from"./index-0XO5Nko-.js";const _={__name:"AuthLayout",setup(n){return a(()=>{t.state.initialized||t.dispatch("initializeAuthState"),t.state.user.name||t.dispatch("getCurrentUser")}),(i,c)=>{const e=o("router-view");return r(),s(e)}}};export{_ as default};

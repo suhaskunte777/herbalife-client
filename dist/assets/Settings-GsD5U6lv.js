@@ -1,0 +1,1 @@
+import{_ as t}from"./AuthHeader-UjLprxd0.js";import{a as e,c as a,w as s,b as o}from"./index-0XO5Nko-.js";const m={__name:"Settings",setup(r){return(_,c)=>(e(),a(t,{title:"Settings"},{default:s(()=>[o(" Setting Context ")]),_:1}))}};export{m as default};
